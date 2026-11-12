@@ -94,3 +94,15 @@ sorted_summary = dict(sorted(summary.items()))
 print(sorted_summary)
 for item in sorted_summary:
     print(f"{item}: ${summary[item]:.2f}")
+
+# --- Exercise 8 ---
+print("\n --- Exercise 8 --- \n")
+
+from datetime import datetime
+total_revenue = 0
+for product in sorted_summary:
+    revenue = sorted_summary[product]
+    total_revenue += float(revenue)
+with open("data/run_log.txt", "a") as f:
+    f.write(f"{datetime.today()} - ${total_revenue:,.2f}\n")
+    print("Log outputted to data/run_log.txt")
