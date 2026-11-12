@@ -56,3 +56,22 @@ with open("data/cleaned.csv", "w", newline="") as f:
 print(f"Wrote {len(high_value)} high-value orders to cleaned.csv")
 print(f"Lines in data.csv: (excl. header): {data_lines}")
 print(f"Line difference: {abs(len(high_value) - data_lines)}")
+
+# -- Exercise 6 --
+print("\n --- Exercise 6 --- \n")
+
+with open("data/sales.csv", "r") as f:
+    reader = csv.DictReader(f)
+    header = next(reader)
+    for row in reader:
+        product = row["product"]
+        price = float(row["price"])
+        qty = int(row["quantity"])
+        total = price * qty
+        print(f"{product}: {qty} units x ${price} = ${total:.2f}")
+
+### The difference between DictReader and reader is that DictReader outputs each line as a dictionary, while reader outputs
+### each line as a list. One advantage of using DictReader is that if you do not know column number but you know its header
+### title, you can call the header instead of the row number because the dictionary's keys are based on the header titles. One
+### advantage of using reader is that it is faster for the computer to process because it does not have to assign keys and values and can
+### simply output the line.
