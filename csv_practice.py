@@ -1,3 +1,19 @@
+# Self Reflection -------------
+#
+# 1) Doing the same task in Excel would probably be faster, for example it took me a very long time to figure out how to sort a dictionary
+# and that is incredibly easy to do in Excel. This is probably just because I am not a Python expert (yet..). I think Python would do a task
+# like this much better if it was working with sales data from a large company, because Excel cannot handle as much data as Python can. But, if
+# say you were trying to demonstrate sales to your boss where you would not need all of the data, Excel would be better as it has a much
+# better user interface and for simple operations it is fast enough for most use cases.
+#
+# 2) One business benefit from a log file is that it can track events happening in a simple way even if millions of purchases are happening.
+# If there was no log file, it is possible that they could miss vital information, like if their purchasing website went down. Appending the logs
+# is beneficial because it makes it easy to see exactly when a problem started occuring, as long as a date and time are added to the log. If it
+# overwrote the file, it would be difficult to track the issue and estimate damages.
+#
+# -------------
+
+# Exercise 1 was downloading the file sales.csv
 
 # -- Exercise 2 --
 print("\n --- Exercise 2 --- \n")
