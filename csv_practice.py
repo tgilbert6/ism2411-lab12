@@ -62,7 +62,6 @@ print("\n --- Exercise 6 --- \n")
 
 with open("data/sales.csv", "r") as f:
     reader = csv.DictReader(f)
-    header = next(reader)
     for row in reader:
         product = row["product"]
         price = float(row["price"])
@@ -75,3 +74,23 @@ with open("data/sales.csv", "r") as f:
 ### title, you can call the header instead of the row number because the dictionary's keys are based on the header titles. One
 ### advantage of using reader is that it is faster for the computer to process because it does not have to assign keys and values and can
 ### simply output the line.
+
+
+# --- Exercise 7 ---
+print("\n --- Exercise 7 --- \n")
+
+summary = {}
+with open("data/sales.csv", "r") as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        product = row["product"]
+        price = float(row["price"])
+        qty = int(row["quantity"])
+        extra = summary.get(product, 0)
+        total = (price * qty) + extra
+        summary[product] = total
+
+sorted_summary = dict(sorted(summary.items()))
+print(sorted_summary)
+for item in sorted_summary:
+    print(f"{item}: ${summary[item]:.2f}")
